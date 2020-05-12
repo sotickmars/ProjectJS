@@ -1,0 +1,175 @@
+.wrap__create {
+  background: linear-gradient(
+    180deg,
+    rgba(170, 207, 207, 1) 0%,
+    rgba(253, 226, 226, 1) 100%
+  );
+  padding-bottom: 45px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 45px;
+}
+
+.h1-title {
+  margin-top: 0;
+  text-align: center;
+  color: #679b9b;
+  font-family: "Dancing Script", cursive;
+  font-size: 45px;
+}
+
+.form-search {
+  padding-bottom: 45px;
+  display: flex;
+}
+
+.btn-add {
+  float: left;
+}
+
+.btn-head {
+  padding: 0;
+  border: 2px solid #679b9b;
+  color: #679b9b;
+  background-color: transparent;
+  cursor: pointer;
+  box-sizing: border-box;
+  width: 90px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: "Dancing Script", cursive;
+  font-size: 22px;
+  margin-right: 20px;
+}
+
+.input-style {
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: 2px solid #679b9b;
+  margin-right: 4px;
+  display: block;
+  padding: 14px 4px;
+}
+
+.wraper__input-create {
+  display: flex;
+}
+
+.input-num {
+  width: 5%;
+}
+
+.input-name {
+  width: 14%;
+}
+
+.input-repear {
+  width: 22%;
+}
+
+.input-cost,
+.input-pay,
+.input-debt {
+  width: 6%;
+}
+
+.input-dataR,
+.input-dataC {
+  width: 14%;
+}
+
+.input-master {
+  width: 15%;
+}
+
+.wrap__block-list {
+  background: linear-gradient(
+    180deg,
+    rgba(253, 226, 226, 1) 54%,
+    rgba(239, 219, 219, 1) 65%,
+    rgba(222, 211, 211, 1) 78%,
+    rgba(206, 203, 203, 1) 86%,
+    rgba(103, 155, 155, 1) 100%
+  );
+  height: 900px;
+  box-sizing: border-box;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.table {
+  margin: auto;
+  border-collapse: collapse;
+}
+
+.table-th {
+  border: 3px solid #679b9b;
+  box-sizing: border-box;
+  background: #fff;
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.th-num {
+  width: 5%;
+}
+
+.th-name {
+  width: 14%;
+}
+
+.th-repear {
+  width: 22%;
+}
+
+.th-cost,
+.th-pay,
+.th-debt {
+  width: 6%;
+}
+
+.th-dataR,
+.th-dataC {
+  width: 13%;
+}
+
+.th-master {
+  width: 15%;
+}
+
+.block__td {
+  padding-left: 5px;
+  padding-right: 5px;
+
+  text-align: center;
+  background: #fff;
+  border-left: 2px solid #679b9b;
+  border-right: 2px solid #679b9b;
+  border-bottom: 2px solid #679b9b;
+}
+
+.block__tr {
+  position: relative;
+}
+
+.delet-span {
+  position: absolute;
+  display: block;
+  background: #fff;
+  border-radius: 5px;
+  padding: 2px;
+  right: 0;
+  margin-right: 10px;
+  color: red;
+  opacity: 0;
+  cursor: pointer;
+  box-shadow: 2px 2px 4px rgb(156, 150, 150);
+}
+
+.block__tr:hover > .delet-span {
+  opacity: 1;
+}
