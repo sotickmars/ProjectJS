@@ -15,6 +15,7 @@ btnAdd.addEventListener("click", (evt) => {
   }
   addData(inputAdd);
   resultRow.appendChild(createDel());
+  saveToLocalStore();
 });
 
 btnSearch.addEventListener("click", (evt) => {
@@ -40,6 +41,12 @@ btnReturn.addEventListener("click", (evt) => {
   }
 });
 
+function saveToLocalStore() {
+  const dataRows = document.querySelectorAll(".block__tr");
+  const data = getData(dataRows);
+  localStorage.setItem("key", JSON.stringify(data));
+}
+
 function checkInput(input) {
   for (let i = 0; i < input.length; i++) {
     if (input[i].value === "") {
@@ -62,11 +69,11 @@ function createBlock() {
 }
 
 function createDel() {
-  let deleteSpan = document.createElement("span");
-  deleteSpan.className = "delet-span";
-  deleteSpan.textContent = "delete";
+  let deleteSpan = document.createElement("i");
+  deleteSpan.className = "delet-span fas fa-trash-alt";
   deleteSpan.addEventListener("click", function () {
     deleteSpan.closest("tr").remove();
+    saveToLocalStore();
   });
   return deleteSpan;
 }
@@ -120,3 +127,46 @@ function addData(items = []) {
     resultRow.appendChild(newCell);
   });
 }
+
+function getCells(row) {
+  let cellsContent = [];
+  const dataCells = row.querySelectorAll(".block__td");
+  dataCells.forEach((item) => {
+    cellsContent.push(item.textContent);
+  });
+  return cellsContent;
+}
+
+function getData(rows) {
+  let data = [];
+  rows.forEach((item, index) => {
+    const dataObj = {
+      id: index,
+      items: [],
+    };
+    const cells = getCells(item);
+    dataObj.items = cells;
+    data.push(dataObj);
+  });
+  return data;
+}
+
+function getDataFromStore() {
+  const items = localStorage.getItem("key");
+  const data = JSON.parse(items);
+  data.forEach((obj) => {
+    const row = createRow();
+    obj.items.forEach((value, index) => {
+      const td = createBlock();
+      td.textContent = value;
+      row.appendChild(td);
+      if (index === obj.items.length - 1) {
+        const del = createDel();
+        row.appendChild(del);
+      }
+    });
+    blockList.appendChild(row);
+  });
+}
+
+getDataFromStore();

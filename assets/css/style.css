@@ -40,6 +40,13 @@
   font-family: "Dancing Script", cursive;
   font-size: 22px;
   margin-right: 20px;
+  font-weight: 900;
+  transition: 0.9s;
+}
+
+.btn-head:hover {
+  animation: btn__move 1s 0.1s linear infinite;
+  background: rgb(253, 226, 226);
 }
 
 .input-style {
@@ -50,6 +57,10 @@
   margin-right: 4px;
   display: block;
   padding: 14px 4px;
+}
+
+.input-style:focus {
+  border: 2px solid chartreuse;
 }
 
 .wraper__input-create {
@@ -157,19 +168,45 @@
 }
 
 .delet-span {
+  font-size: 20px;
   position: absolute;
   display: block;
-  background: #fff;
   border-radius: 5px;
   padding: 2px;
   right: 0;
-  margin-right: 10px;
-  color: red;
+  margin-right: 20px;
+  color: rgb(148, 144, 144);
   opacity: 0;
   cursor: pointer;
-  box-shadow: 2px 2px 4px rgb(156, 150, 150);
+  transition: 0.4s;
+}
+
+.delet-span:hover {
+  color: rgb(243, 21, 21);
+  font-size: 22px;
 }
 
 .block__tr:hover > .delet-span {
   opacity: 1;
+}
+
+@keyframes btn__move {
+  10% {
+    transform: scale(1.02, 1.02);
+  }
+  20% {
+    transform: scale(1.05, 1.05);
+  }
+  40% {
+    transform: scale(1.02, 1.02);
+  }
+  60% {
+    transform: scale(1.05, 1.05);
+  }
+  80% {
+    transform: scale(1.01, 1.01);
+  }
+  90% {
+    transform: scale(1);
+  }
 }
